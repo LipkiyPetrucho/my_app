@@ -1,0 +1,117 @@
+MDScreen:
+    MDBoxLayout:
+        id: box_main
+        orientation: "vertical"
+
+        MDTopAppBar:
+            md_bg_color: [1, 1, 1, 1]
+            specific_text_color: [0, 0, 0, 1]
+            right_action_items: [["account-circle-outline", lambda x: print("Search clicked")]]
+
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                icon: 'home-circle-outline'
+
+                MDBoxLayout:
+                    id: main_fon
+                    orientation: 'vertical'
+                    md_bg_color: 0.88, 0.88, 0.88, 1
+                    padding: "15dp"
+
+                    ScrollView:
+                        do_scroll_x: False
+
+                        MDBoxLayout:
+                            id: box_create
+                            orientation: 'vertical'
+                            md_bg_color: [1, 1, 1, 1]
+                            adaptive_height: True
+                            radius: 20
+
+                            MDBoxLayout:
+                                id: box_grid_create
+                                orientation: 'vertical'
+                                padding: '25dp'
+                                adaptive_height: True
+
+                                MDGridLayout:
+                                    id: grid_create
+                                    adaptive_height: True
+                                    rows: 1
+                                    spacing: '0dp'
+
+                                    MDBoxLayout:
+                                        id: box_labels
+                                        orientation: 'vertical'
+                                        md_bg_color: [1, 1, 1, 1]
+                                        spacing: dp(25)
+                                        adaptive_height: True
+
+                                        MDBoxLayout:
+                                            id: box_start_playing
+                                            orientation: 'vertical'
+                                            md_bg_color: 0.88, 0.88, 0.88, 1
+                                            adaptive_height: True
+                                            radius: 10
+                                            padding: [5, 10, 5, 10]
+
+                                            MDLabel:
+                                                id: start_playing
+                                                text: "НАЧНИ ИГРУ!"
+                                                background_color: 0.88, 0.88, 0.88, 1
+                                                text_color: [1, 0, 0, 1]
+                                                font_size: '14px'
+                                                theme_text_color: "Secondary"
+                                                halign: "center"
+
+
+
+                                        MDLabel:
+                                            id: create_game
+                                            text: "Создать игру"
+
+                                        MDLabel:
+                                            id: current_game
+                                            text: "date game"
+                                            theme_text_color: "Secondary"
+
+                                    MDBoxLayout:
+                                        id: box_but_create
+                                        orientation: 'vertical'
+
+                                        MDRectangleFlatButton:
+                                            id: but_create
+                                            text: "Создать"
+                                            pos_hint: {"center_x": .70, "center_y": .5}
+                                            line_color: 0.88, 0.88, 0.88, 1
+                                            text_color: [0, 0, 0, 1]
+                                            font_size: '22px'
+                                            on_release: lambda x: print("Search clicked")
+
+                            MDSeparator:
+                                height: "1dp"
+
+                            MDIconButton:
+                                id: but_calendar
+                                icon: 'calendar-outline'
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                on_release: on_release: lambda x: print("Search clicked")
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                icon: 'soccer-field'
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: 'Добро пожаловать на Экран 2'
+                        halign: 'center'
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                icon: 'account-circle-outline'
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: 'Добро пожаловать на Экран 3'
+                        halign: 'center'

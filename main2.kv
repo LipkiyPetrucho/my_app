@@ -1,0 +1,77 @@
+MDBottomNavigationItem:
+    name: 'screen 1'
+    icon: 'home-circle-outline'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.88, 0.88, 0.88, 1
+        padding: "15dp"
+
+        ScrollView:
+            do_scroll_x: False
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                md_bg_color: [1, 1, 1, 1]
+                adaptive_height: True
+                radius: 20
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: '25dp'
+                    adaptive_height: True
+
+                    MDGridLayout:
+                        id: create_game
+                        adaptive_height: True
+                        rows: 1
+                        spacing: '0dp'
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            md_bg_color: [1, 1, 1, 1]
+                            spacing: dp(25)
+                            adaptive_height: True
+
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                md_bg_color: 0.88, 0.88, 0.88, 1
+                                adaptive_height: True
+                                radius: 10
+                                padding: [5, 10, 5, 10]
+
+                                MDLabel:
+                                    text: "НАЧАТЬ ИГРУ!"
+                                    background_color: 0.88, 0.88, 0.88, 1
+                                    text_color: [1, 0, 0, 1]
+                                    font_size: '14px'
+                                    theme_text_color: "Secondary"
+                                    halign: "center"
+
+
+
+                            MDLabel:
+                                text: "Создать игру"
+
+                            MDLabel:
+                                text: "date game"
+                                theme_text_color: "Secondary"
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+
+                            MDRectangleFlatButton:
+                                text: "Создать"
+                                pos_hint: {"center_x": .70, "center_y": .5}
+                                line_color: 0.88, 0.88, 0.88, 1
+                                text_color: [0, 0, 0, 1]
+                                font_size: '22px'
+                                on_release: app.view_activity()
+
+                MDSeparator:
+                    height: "1dp"
+
+                MDIconButton:
+                    icon: 'calendar-outline'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    on_release: app.view_calendar()
